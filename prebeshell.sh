@@ -47,10 +47,13 @@ if [ $(grep -c $usuario /etc/passwd | tail -n 1) -ne 0 ]; #esta parte fue recicl
 		exit 0;
 fi
 
-comando="kha"
+comando="anyeschida"
 while [ "$comando" != "salir" ]; do
 	echo -n "$usuario @"
 	pwd
 	echo -n "-->"
 	read comando
+	if [ "$comando" == "hora" ]; then
+		bash hora.sh
+	fi
 done
