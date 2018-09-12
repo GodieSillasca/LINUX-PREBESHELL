@@ -53,7 +53,12 @@ while [ "$comando" != "salir" ]; do
 	pwd
 	echo -n "-->"
 	read comando
-	if [ "$comando" == "hora" ]; then
-		bash hora.sh
-	fi
+	case $comando in
+		'hora' ) #Esta opción activa el comando hora
+			bash hora.sh
+			;;
+		*) #Esta opción del case es la que permite que los comandos usuales del bash funcionen
+			$comando
+			;;
+	esac
 done
