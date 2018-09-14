@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Este es un juego de dados, los cuales te darán dos números entre 1 y 6, después se sumarán,y dependiendo de esta suma, tendrás que efectuar la accioń indicada"
+echo ""
+echo -e "\e[45m ********************Juego de Dados*********************\e[0m"
+echo ""
+echo -e "\e[33m Este es un juego de dados, los cuales te darán dos números entre 1 y 6, después se sumarán,y dependiendo de esta suma, tendrás que efectuar la accioń indicada\e[0m"
 salida=1
 decision=0
 
@@ -13,7 +16,7 @@ suma=`expr $var1 + $var2`
 echo "suma = $suma"
 	
 continuar(){
-	echo "¿Quieres volver a jugar? Presiona 1 para terminar y cualquier tecla para continuar."
+	echo -e "\e[5m¿Quieres volver a jugar? Presiona 1 para terminar y cualquier tecla para continuar.\e[0m"
 	read salida
 	if [ $salida == 1 ];then
 		decision=1
@@ -64,7 +67,7 @@ continuar(){
 
 		fi
 		if [ $suma -eq 12 ]; then
-			echo "Pide a alguien que te olfatee."
+			echo  "Pide a alguien que te olfatee."
 			continuar
 
 		fi
