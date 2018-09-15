@@ -23,7 +23,7 @@ if [ $(grep -c $usuario /etc/passwd | tail -n 1) -ne 0 ]; #esta parte fue recicl
 	then
 		if [ $(grep -c $usuario $usuariosvalidos) -ne 0 ]; #en este if, se describe qué ocurrirá si el usuario ingresado es un usuario válido, presente en passwd
 			then
-				echo -e "\e[31m Ingresa tu contraseña plox \e[0m"
+				echo -e "\e[36m Ingresa tu contraseña plox \e[0m"
 				read -s contrasena
 				if [ $(grep -c $contrasena $contrasenas) -ne 0 ]; then #tras leer la contraseña, este if decide si hay acceso o no, verificando que la contraseña in
 					clear
@@ -51,7 +51,7 @@ comando="anyeschida"
 while [ "$comando" != "salir" ]; do
 	echo -ne "\e[32m $usuario\e[0m"
 	echo -ne "\e[92m@\e[0m"
-	echo -e "\e[35m $PWD \e[0m"
+	echo -e "\e[32m $PWD \e[0m"
 	echo -ne "\e[94m-->\e[0m"
 	read comando
 	case $comando in
@@ -63,6 +63,28 @@ while [ "$comando" != "salir" ]; do
 			;;
 		'fecha')
 			bash fecha.sh
+			;;
+		'juegoahorcado')
+			bash juegoahorcado.sh
+			;;
+		'juegodados')
+			bash dado.sh
+			;;
+		'infosis')
+			bash infosys.sh
+			;;
+		'prebeplayer')
+			bash prebeplayer.sh
+			;;
+		'buscar')
+			bash busqueda.sh
+			;;
+		'arbol')
+			echo 'Problemas técnicos, función en construcción jijiji'
+			echo 'Usa el comando tree'
+			;;
+		'creditos')
+			bash creditos.sh
 			;;
 		*) #Esta opción del case es la que permite que los comandos usuales del bash funcionen
 			$comando

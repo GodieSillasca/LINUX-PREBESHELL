@@ -3,7 +3,9 @@
 intento=0
 cont=0
 
-echo Ahorcado FI, elaborado por SOMH y CAMD para esta PREBESHELL.; 
+echo -e "\e[36mAhorcado FI, elaborado por SOMH y CAMD para esta PREBESHELL.;" 
+echo Este juego es para dos personas.
+echo "Ingresa la palabra que quieres que tu oponente adivine, procura que no te vea!"
 declare -a palabra1[15];  #Se declara la palabra1, la cual contendrá 15 espacios
 
 read -p "Palabra : " palabra2                # Se lee la palabra 2, -p ayuda a excribir en la terminal mientras recibe de teclado
@@ -15,6 +17,7 @@ for i in $(seq 0 $longitud); # seq:para generar una lista de valores
 done
 
 read -p "Defina el numero de intentos que el jugador tendrá para para adivinar la palabra  : " intento # intento nos indica hasta qué momento terminar el programa
+clear
 declare -a pavidinar[$longitud];
 for i in $(seq 0 $longitud);
 	do
