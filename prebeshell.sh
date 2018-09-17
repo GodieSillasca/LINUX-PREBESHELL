@@ -9,6 +9,12 @@
 #				 Solana Mejía, H.A. (Prebecario 14)
 #Ejecutar el archivo así: "$$ bash prebeshell.sh", para que las opciones de 'read' estén disponibles
 #echo "PS1="\[\033[01;32m\]\u\[\033[01;31m\]en\[\033[0;36m\]->\[\033[0;36m\]\w$\[\033[0;37m\]""
+funcion () { 
+	#Esta función es para atrapar las señales de salida.
+	echo "Sal con elegancia, usa el comando necesario..."
+	
+	echo -e "Presiona enter, y si aún quieres salir escribe el comando \e[33msalir\e[0m"
+}
 clear
 usuariosvalidos=~/usuariosregistrados.txt
 contrasenas=~/contrasenas.txt
@@ -48,11 +54,13 @@ if [ $(grep -c $usuario /etc/passwd | tail -n 1) -ne 0 ]; #esta parte fue recicl
 fi
 
 comando="anyeschida"
+echo -e "\e[32mPresiona 'ayuda' para recibir ayuda sobre los comandos de la prebeshell!\e[0m"
 while [ "$comando" != "salir" ]; do
-	echo -ne "\e[32m $usuario\e[0m"
+	echo -ne "\e[32m$usuario\e[0m"
 	echo -ne "\e[92m@\e[0m"
 	echo -e "\e[32m $PWD \e[0m"
 	echo -ne "\e[94m-->\e[0m"
+	trap "funcion" INT QUIT TSTP
 	read comando
 	case $comando in
 		'hora' ) #Esta opción activa el comando hora
@@ -80,11 +88,13 @@ while [ "$comando" != "salir" ]; do
 			bash busqueda.sh
 			;;
 		'arbol')
-			echo 'Problemas técnicos, función en construcción jijiji'
-			echo 'Usa el comando tree'
+			bash arbol.sh
 			;;
 		'creditos')
 			bash creditos.sh
+			;;
+		'ayuda')
+			bash ayuda.sh
 			;;
 		*) #Esta opción del case es la que permite que los comandos usuales del bash funcionen
 			$comando

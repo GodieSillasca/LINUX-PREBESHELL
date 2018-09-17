@@ -13,7 +13,7 @@ echo -e "\e[33m'salir'\e[0m ---------Sale del presente script, de la PREBESHEEL 
 echo -e "\e[96m'fecha'\e[0m ---------Imprime en pantalla la fecha del sistema."
 echo -e "\e[32m'juego_ahorcado'\e[0m --Permite ingresar al juego de ahorcado."
 echo -e "\e[33m'juego_dados'\e[0m ---- Permite ingresar al juego de los dados"
-echo -e "\e[96m'Infosis'\e[0m ---------Imprime en pantalla la información básica correspondiente al sistema."
+echo -e "\e[96m'infosis'\e[0m ---------Imprime en pantalla la información básica correspondiente al sistema."
 echo -e "\e[32m'prebeplayer'\e[0m -----Permite ingresar al reproducción de música."
 echo -e "\e[33m'buscar'\e[0m ----------Permite realizar la búsqueda de un archivo especificado en una determinada carpeta del sistema."
 echo -e "\e[96m'arbol'\e[0m -----------Muestra de manera gráfica la jerarquía de un directorio."
